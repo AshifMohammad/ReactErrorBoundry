@@ -1,0 +1,50 @@
+{
+  "name": "react-error-boundary",
+  "version": "1.0.0",
+  "description": "\"React High Order Component (HOC) for Error Boundary",
+  "main": "build/index.js",
+  "scripts": {
+    "start": "webpack --watch",
+    "build": "webpack",
+    "clean": "npx npm-run-all -p -l clean:root-modules",
+    "test": "jest  --watch"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "webpack": "^3.12.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AshifMohammad/ReactErrorBoundry.git"
+  },
+  "keywords": [
+    "react",
+    "error",
+    "boundary",
+    "hoc",
+    "error-boundary-hoc"
+  ],
+  "author": "Mohammad Ashif Zafar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AshifMohammad/ReactErrorBoundry/issues"
+  },
+  "homepage": "https://github.com/AshifMohammad/ReactErrorBoundry#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.0.6",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "clean-webpack-plugin": "^3.0.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "enzyme-to-json": "^3.4.4",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^25.1.0"
+  },
+  "peerDependencies": {
+    "react": "^16.8.6"
+  }
+}
