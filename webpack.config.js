@@ -3,18 +3,18 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: "./src/index.js"
+    app: './src/index.js',
+    ErrorBoundary:'./src/ErrorBoundary.js'
   },
   plugins: [new CleanWebpackPlugin()],
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "[name].bundle.js",
-    libraryTarget: "commonjs2" // THIS IS THE MOST IMPORTANT LINE! :mindblow: I wasted more than 2 days until realize this was the line most important in all this guide.
+    filename: "[name].js",
   },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx|mjs)$/,
         include: path.resolve(__dirname, "src"),
         exclude: /(node_modules|bower_components|dist)/,
         use: {

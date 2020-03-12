@@ -1,19 +1,15 @@
 import React, { Component } from "react";
 import { ErrorBoundaryFallback } from "./FallBackComponent";
 
-export default class withErrorBoundary extends Component {
-  static defaultProps = {
-    onError: (error, componentStack) => {
-      console.error("Error has occurred:", error.name);
-      console.warn("Error Component Stack: ", componentStack);
-    },
-    FallBackComponent: ErrorBoundaryFallback
-  };
+class ErrorBoundary extends Component {
+  constructor(props){
+    super(props)
+    this.state={
+      error: null,
+      info: null
+    }
+  }
 
-  state = {
-    error: null,
-    info: null
-  };
 
   componentDidCatch(error, info) {
     this.setState({
@@ -37,4 +33,13 @@ export default class withErrorBoundary extends Component {
     }
     return children;
   }
+}
+export default ErrorBoundary;
+
+ErrorBoundary.defaultProps={
+  onError: (error, componentStack) => {
+    console.error("Error has occurred:", error.name);
+    console.warn("Error Component Stack: ", componentStack);
+  },
+  FallBackComponent: ErrorBoundaryFallback
 }
